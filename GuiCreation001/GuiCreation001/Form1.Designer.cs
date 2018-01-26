@@ -43,8 +43,8 @@
             this.ProgressBar001 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ContStatus = new System.Windows.Forms.GroupBox();
-            this.LabelStatusStatus = new System.Windows.Forms.Label();
             this.LblStatusTitle = new System.Windows.Forms.Label();
+            this.CmbStatus = new System.Windows.Forms.ListBox();
             this.ContRules.SuspendLayout();
             this.ContWires.SuspendLayout();
             this.ContStatus.SuspendLayout();
@@ -163,23 +163,14 @@
             // 
             // ContStatus
             // 
-            this.ContStatus.Controls.Add(this.LabelStatusStatus);
+            this.ContStatus.Controls.Add(this.CmbStatus);
             this.ContStatus.Controls.Add(this.LblStatusTitle);
             this.ContStatus.Location = new System.Drawing.Point(21, 340);
             this.ContStatus.Name = "ContStatus";
-            this.ContStatus.Size = new System.Drawing.Size(510, 100);
+            this.ContStatus.Size = new System.Drawing.Size(510, 164);
             this.ContStatus.TabIndex = 11;
             this.ContStatus.TabStop = false;
             this.ContStatus.Text = "ContStatus";
-            // 
-            // LabelStatusStatus
-            // 
-            this.LabelStatusStatus.AutoSize = true;
-            this.LabelStatusStatus.Location = new System.Drawing.Point(20, 54);
-            this.LabelStatusStatus.Name = "LabelStatusStatus";
-            this.LabelStatusStatus.Size = new System.Drawing.Size(46, 17);
-            this.LabelStatusStatus.TabIndex = 14;
-            this.LabelStatusStatus.Text = "label1";
             // 
             // LblStatusTitle
             // 
@@ -190,11 +181,20 @@
             this.LblStatusTitle.TabIndex = 13;
             this.LblStatusTitle.Text = "Status";
             // 
+            // CmbStatus
+            // 
+            this.CmbStatus.FormattingEnabled = true;
+            this.CmbStatus.ItemHeight = 16;
+            this.CmbStatus.Location = new System.Drawing.Point(13, 48);
+            this.CmbStatus.Name = "CmbStatus";
+            this.CmbStatus.Size = new System.Drawing.Size(491, 100);
+            this.CmbStatus.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 471);
+            this.ClientSize = new System.Drawing.Size(543, 516);
             this.Controls.Add(this.ContStatus);
             this.Controls.Add(this.ProgressBar001);
             this.Controls.Add(this.BtnStartStopReset);
@@ -226,8 +226,8 @@
         private System.Windows.Forms.ProgressBar ProgressBar001;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.GroupBox ContStatus;
-        private System.Windows.Forms.Label LabelStatusStatus;
         private System.Windows.Forms.Label LblStatusTitle;
+        private System.Windows.Forms.ListBox CmbStatus;
     }
 }
 
