@@ -16,5 +16,15 @@ namespace GuiCreation001
         {
             InitializeComponent();
         }
+
+        private void progressBar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblRulesRules_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
