@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="LblRulesRules.Text" xml:space="preserve">
+  <data name="lblRulesRules.Text" xml:space="preserve">
     <value>- If there are no red wires, cut the second wire.
 - Otherwise, if the last wire is white, cut the last wire.
 - Otherwise, if there is more than one blue wire, cut the last blue wire.
