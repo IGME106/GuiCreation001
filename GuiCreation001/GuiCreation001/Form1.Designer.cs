@@ -39,7 +39,7 @@
             this.btnWire001 = new System.Windows.Forms.Button();
             this.btnWire002 = new System.Windows.Forms.Button();
             this.btnWire003 = new System.Windows.Forms.Button();
-            this.btnStartStopReset = new System.Windows.Forms.Button();
+            this.btnStartReset = new System.Windows.Forms.Button();
             this.progressBar001 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contStatus = new System.Windows.Forms.GroupBox();
@@ -142,14 +142,15 @@
             this.btnWire003.TabIndex = 10;
             this.btnWire003.UseVisualStyleBackColor = false;
             // 
-            // btnStartStopReset
+            // btnStartReset
             // 
-            this.btnStartStopReset.Location = new System.Drawing.Point(393, 48);
-            this.btnStartStopReset.Name = "btnStartStopReset";
-            this.btnStartStopReset.Size = new System.Drawing.Size(132, 37);
-            this.btnStartStopReset.TabIndex = 9;
-            this.btnStartStopReset.Text = "Start Game";
-            this.btnStartStopReset.UseVisualStyleBackColor = true;
+            this.btnStartReset.Location = new System.Drawing.Point(393, 48);
+            this.btnStartReset.Name = "btnStartReset";
+            this.btnStartReset.Size = new System.Drawing.Size(132, 37);
+            this.btnStartReset.TabIndex = 9;
+            this.btnStartReset.Text = "Start Game";
+            this.btnStartReset.UseVisualStyleBackColor = true;
+            this.btnStartReset.Click += new System.EventHandler(this.btnStartReset_Click);
             // 
             // progressBar001
             // 
@@ -158,6 +159,10 @@
             this.progressBar001.Size = new System.Drawing.Size(510, 24);
             this.progressBar001.TabIndex = 10;
             this.progressBar001.Click += new System.EventHandler(this.progressBar_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // contStatus
             // 
@@ -194,11 +199,12 @@
             this.ClientSize = new System.Drawing.Size(543, 516);
             this.Controls.Add(this.contStatus);
             this.Controls.Add(this.progressBar001);
-            this.Controls.Add(this.btnStartStopReset);
+            this.Controls.Add(this.btnStartReset);
             this.Controls.Add(this.contWires);
             this.Controls.Add(this.contRules);
             this.Name = "Form1";
             this.Text = "Keep Talking and Nobody Explodes";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.contRules.ResumeLayout(false);
             this.contRules.PerformLayout();
             this.contWires.ResumeLayout(false);
@@ -219,7 +225,7 @@
         private System.Windows.Forms.Button btnWire001;
         private System.Windows.Forms.Button btnWire002;
         private System.Windows.Forms.Button btnWire003;
-        private System.Windows.Forms.Button btnStartStopReset;
+        private System.Windows.Forms.Button btnStartReset;
         private System.Windows.Forms.ProgressBar progressBar001;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.GroupBox contStatus;
