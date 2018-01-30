@@ -113,7 +113,8 @@ namespace GuiCreation001 {
                     progressBar001.Value = 0;
                     changeWireState("disable");
                     ResetWireColors();
-                    
+                    listBStatus.Items.Clear();
+
                     timer1.Stop();
 
                     break;
@@ -138,7 +139,7 @@ namespace GuiCreation001 {
             if (winOrLoose)
             {
                 Console.WriteLine(pressedButton.Name);
-                listBStatus.Items.Add("You Win");                
+                listBStatus.Items.Add("You Win");
             }
             else
             {
