@@ -20,6 +20,8 @@ namespace GuiCreation001 {
 
         private static List<Button> buttonList = new List<Button> { };
 
+        private static Random random = new Random();                       // Instantiate a random number generator
+
         int redWires = 0;
         bool lastWireWhite = false;
         int blueWires = 0;
@@ -48,7 +50,8 @@ namespace GuiCreation001 {
             }
             else
             {
-                this.btnStartReset.Enabled = true;
+                StartResetGame("StopGame");
+//                this.btnStartReset.Enabled = true;
             }
         }
 
@@ -61,22 +64,61 @@ namespace GuiCreation001 {
 
             if (btnStartReset.Text.Equals("Start Game"))
             {
-                btnStartReset.Text = "Reset Game";
-                btnStartReset.Enabled = false;
-                changeWireState("enable");
+                StartResetGame("StartGame");
+                //btnStartReset.Text = "Reset Game";
+                //btnStartReset.Enabled = false;
+                //changeWireState("enable");
 
-                SetWireColors();
-                GetBombProperties();
+                //SetWireColors();
+                //GetBombProperties();
 
-                timer1.Start();
+                //timer1.Start();
             }
             else
             {
-                btnStartReset.Text = "Start Game";
-                progressBar001.Value = 0;
-                changeWireState("disable");
+                StartResetGame("ResetGame");
+                //btnStartReset.Text = "Start Game";
+                //progressBar001.Value = 0;
+                //changeWireState("disable");
 
-                timer1.Stop();
+                //timer1.Stop();
+            }
+        }
+
+        private void StartResetGame (string stateRequest) {
+
+            switch (stateRequest)
+            {
+                case "StartGame":
+                    btnStartReset.Text = "Reset Game";
+                    btnStartReset.Enabled = false;
+                    changeWireState("enable");
+
+                    SetWireColors();
+                    GetBombProperties();
+
+                    timer1.Start();
+
+                    break;
+                case "StopGame":
+                    this.btnStartReset.Enabled = true;
+                    changeWireState("disable");
+
+                    timer1.Stop();
+
+                    break;
+                case "ResetGame":
+                    btnStartReset.Text = "Start Game";
+                    this.btnStartReset.Enabled = true;
+                    progressBar001.Value = 0;
+                    changeWireState("disable");
+                    ResetWireColors();
+                    
+                    timer1.Stop();
+
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -96,13 +138,15 @@ namespace GuiCreation001 {
             if (winOrLoose)
             {
                 Console.WriteLine(pressedButton.Name);
-                listBStatus.Items.Add("You Win");
+                listBStatus.Items.Add("You Win");                
             }
             else
             {
                 Console.WriteLine(pressedButton.Name);
                 listBStatus.Items.Add("You Loose");
             }
+
+            StartResetGame("StopGame");
         }
 
         private bool BombLogic(Button buttonClicked) {
@@ -208,8 +252,24 @@ namespace GuiCreation001 {
             return returnValue;
         }
 
+        private void ResetWireColors() {
+
+            for (int i = 0; i < 5; i++)
+            {
+                buttonList[i].BackColor = Color.LightGray;
+            }
+        }
+
         private void SetWireColors() {
 
+            for (int i = 0; i < 5; i++)
+            {
+                buttonList[i].BackColor = wireColor[RandomNumber(0,5)];
+            }
+        }
+
+        private static int RandomNumber(int min, int max) {
+            return random.Next(min, max);
         }
     }
 }
