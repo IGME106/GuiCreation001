@@ -43,8 +43,8 @@
             this.progressBar001 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contStatus = new System.Windows.Forms.GroupBox();
-            this.cmbBStatus = new System.Windows.Forms.ListBox();
             this.lblStatusTitle = new System.Windows.Forms.Label();
+            this.listBStatus = new System.Windows.Forms.ListBox();
             this.contRules.SuspendLayout();
             this.contWires.SuspendLayout();
             this.contStatus.SuspendLayout();
@@ -67,7 +67,6 @@
             this.lblRulesRules.Size = new System.Drawing.Size(443, 68);
             this.lblRulesRules.TabIndex = 1;
             this.lblRulesRules.Text = resources.GetString("lblRulesRules.Text");
-            this.lblRulesRules.Click += new System.EventHandler(this.LblRulesRules_Click);
             // 
             // contRules
             // 
@@ -98,49 +97,54 @@
             this.btnWire004.Enabled = false;
             this.btnWire004.Location = new System.Drawing.Point(51, 82);
             this.btnWire004.Name = "btnWire004";
-            this.btnWire004.Size = new System.Drawing.Size(414, 10);
+            this.btnWire004.Size = new System.Drawing.Size(414, 15);
             this.btnWire004.TabIndex = 11;
             this.btnWire004.UseVisualStyleBackColor = false;
+            this.btnWire004.Click += new System.EventHandler(this.btnWire_Click);
             // 
             // btnWire005
             // 
             this.btnWire005.BackColor = System.Drawing.Color.Yellow;
             this.btnWire005.Enabled = false;
-            this.btnWire005.Location = new System.Drawing.Point(51, 98);
+            this.btnWire005.Location = new System.Drawing.Point(51, 103);
             this.btnWire005.Name = "btnWire005";
-            this.btnWire005.Size = new System.Drawing.Size(414, 10);
+            this.btnWire005.Size = new System.Drawing.Size(414, 15);
             this.btnWire005.TabIndex = 12;
             this.btnWire005.UseVisualStyleBackColor = false;
+            this.btnWire005.Click += new System.EventHandler(this.btnWire_Click);
             // 
             // btnWire001
             // 
             this.btnWire001.BackColor = System.Drawing.Color.Red;
             this.btnWire001.Enabled = false;
-            this.btnWire001.Location = new System.Drawing.Point(51, 34);
+            this.btnWire001.Location = new System.Drawing.Point(51, 21);
             this.btnWire001.Name = "btnWire001";
-            this.btnWire001.Size = new System.Drawing.Size(414, 10);
+            this.btnWire001.Size = new System.Drawing.Size(414, 15);
             this.btnWire001.TabIndex = 8;
             this.btnWire001.UseVisualStyleBackColor = false;
+            this.btnWire001.Click += new System.EventHandler(this.btnWire_Click);
             // 
             // btnWire002
             // 
             this.btnWire002.BackColor = System.Drawing.Color.Black;
             this.btnWire002.Enabled = false;
-            this.btnWire002.Location = new System.Drawing.Point(51, 50);
+            this.btnWire002.Location = new System.Drawing.Point(51, 42);
             this.btnWire002.Name = "btnWire002";
-            this.btnWire002.Size = new System.Drawing.Size(414, 10);
+            this.btnWire002.Size = new System.Drawing.Size(414, 15);
             this.btnWire002.TabIndex = 9;
             this.btnWire002.UseVisualStyleBackColor = false;
+            this.btnWire002.Click += new System.EventHandler(this.btnWire_Click);
             // 
             // btnWire003
             // 
             this.btnWire003.BackColor = System.Drawing.Color.Blue;
             this.btnWire003.Enabled = false;
-            this.btnWire003.Location = new System.Drawing.Point(51, 66);
+            this.btnWire003.Location = new System.Drawing.Point(51, 61);
             this.btnWire003.Name = "btnWire003";
-            this.btnWire003.Size = new System.Drawing.Size(414, 10);
+            this.btnWire003.Size = new System.Drawing.Size(414, 15);
             this.btnWire003.TabIndex = 10;
             this.btnWire003.UseVisualStyleBackColor = false;
+            this.btnWire003.Click += new System.EventHandler(this.btnWire_Click);
             // 
             // btnStartReset
             // 
@@ -158,7 +162,6 @@
             this.progressBar001.Name = "progressBar001";
             this.progressBar001.Size = new System.Drawing.Size(510, 24);
             this.progressBar001.TabIndex = 10;
-            this.progressBar001.Click += new System.EventHandler(this.progressBar_Click);
             // 
             // timer1
             // 
@@ -166,22 +169,13 @@
             // 
             // contStatus
             // 
-            this.contStatus.Controls.Add(this.cmbBStatus);
+            this.contStatus.Controls.Add(this.listBStatus);
             this.contStatus.Controls.Add(this.lblStatusTitle);
             this.contStatus.Location = new System.Drawing.Point(21, 340);
             this.contStatus.Name = "contStatus";
             this.contStatus.Size = new System.Drawing.Size(510, 164);
             this.contStatus.TabIndex = 11;
             this.contStatus.TabStop = false;
-            // 
-            // cmbBStatus
-            // 
-            this.cmbBStatus.FormattingEnabled = true;
-            this.cmbBStatus.ItemHeight = 16;
-            this.cmbBStatus.Location = new System.Drawing.Point(13, 48);
-            this.cmbBStatus.Name = "cmbBStatus";
-            this.cmbBStatus.Size = new System.Drawing.Size(491, 100);
-            this.cmbBStatus.TabIndex = 14;
             // 
             // lblStatusTitle
             // 
@@ -191,6 +185,15 @@
             this.lblStatusTitle.Size = new System.Drawing.Size(48, 17);
             this.lblStatusTitle.TabIndex = 13;
             this.lblStatusTitle.Text = "Status";
+            // 
+            // listBStatus
+            // 
+            this.listBStatus.FormattingEnabled = true;
+            this.listBStatus.ItemHeight = 16;
+            this.listBStatus.Location = new System.Drawing.Point(13, 48);
+            this.listBStatus.Name = "listBStatus";
+            this.listBStatus.Size = new System.Drawing.Size(491, 100);
+            this.listBStatus.TabIndex = 14;
             // 
             // Form1
             // 
@@ -230,7 +233,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.GroupBox contStatus;
         private System.Windows.Forms.Label lblStatusTitle;
-        private System.Windows.Forms.ListBox cmbBStatus;
+        private System.Windows.Forms.ListBox listBStatus;
     }
 }
 
